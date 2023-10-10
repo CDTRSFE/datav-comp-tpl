@@ -1,0 +1,95 @@
+.el-dropdown__popper.el-popper[role='tooltip'] {
+    background: transparent;
+    border: none;
+}
+.el-select {
+    .el-input {
+        &.is-focus,
+        & {
+            .el-input__inner {
+                box-shadow: none !important;
+                &:hover,
+                &:active,
+                &:focus {
+                    box-shadow: none !important;
+                }
+            }
+        }
+    }
+}
+.el-input {
+    height: 30px;
+    line-height: 30px;
+    &.is-focus {
+        .el-input__inner {
+            box-shadow: none !important;
+        }
+    }
+    &.is-disabled {
+        .el-input__inner {
+            background-color: initial !important;
+        }
+    }
+    .el-input__inner {
+        background-color: @background-color;
+        height: 30px;
+        line-height: 30px;
+        color: white;
+        border-width: 1px;
+        border-style: solid;
+        box-shadow: none !important;
+    }
+}
+.el-select__popper.el-popper[role='tooltip'] {
+    background-color: @background-color !important;
+    border-color: @background-color !important;
+    box-shadow: 0 0 8px black !important;
+    .el-select-dropdown {
+        background-color: @background-color;
+        .el-select-dropdown__item {
+            color: white;
+            &:hover {
+                color: white;
+                background-color: @background-color-dark;
+            }
+            &.selected,
+            &.hover {
+                background-color: @background-color-dark;
+            }
+        }
+    }
+    .el-popper__arrow {
+        background-color: @background-color;
+        &::before {
+            border-color: @background-color;
+            background-color: @background-color;
+            box-shadow: 0 0 8px black;
+        }
+    }
+}
+.el-overlay {
+    &.is-message-box {
+        .el-message-box {
+            background-color: @background-color;
+            border-color: @background-color;
+            box-shadow: 0 0 8px black;
+            .el-message-box__header {
+                .el-message-box__title {
+                    color: white;
+                }
+            }
+            .el-message-box__content {
+                .el-message-box__container {
+                    .el-message-box__message {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+.el-message {
+    .el-message__closeBtn {
+        color: var(--el-message-font-color);
+    }
+}
