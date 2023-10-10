@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { smartDesignAssiant } from 'smart-design-assiant';
 import 'smart-design-assiant/dist/style.css';
-import Demo from '@/components/Demo/Demo.vue';
+import Demo from '@/components/foo/Demo.vue';
 </script>
 
 <template>
