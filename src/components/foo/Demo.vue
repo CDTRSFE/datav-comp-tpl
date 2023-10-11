@@ -1,5 +1,5 @@
 <template>
-    <div class="abc">
+    <div class="text-red">
         <Abc></Abc>
     </div>
 </template>
@@ -21,7 +21,4 @@ const Abc = () => {
 };
 </script>
 <style lang="less" scoped>
-.abc {
-    color: #fff;
-}
 </style>

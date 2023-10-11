@@ -1,7 +1,7 @@
 const customCssFunc = ['theme', 'v-bind', 'numberWithUnit', 'gradientColorToCss', 'zoomMin'];
 module.exports = {
     extends: '@trscd/stylelint-config-tpconfig',
-    ignoreFiles: ['./public/**/*'],
+    ignoreFiles: ['./public/**/*', './smart-design-lib/**/*'],
     rules: {
         // https://github.com/vuejs/rfcs/blob/master/active-rfcs/0023-scoped-styles-changes.md
         'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['deep'] }],
