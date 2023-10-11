@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
+        "build": "vite build && zip smart-design-lib.zip smart-design-lib",
         "preview": "vite preview",
         "lint": "npm run lint:eslint && npm run lint:stylelint",
         "lint:style": "stylelint \"src/**/*.{vue,css,less,scss}\" --fix",
