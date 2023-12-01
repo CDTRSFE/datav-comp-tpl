@@ -43,6 +43,7 @@
         "@types/node": "^17.0.23",
         "@unocss/transformer-directives": "^0.57.6",
         "@vitejs/plugin-vue": "^2.3.0",
+        "archiver": "^6.0.1",
         "cz-conventional-changelog": "^3.3.0",
         "husky": "^8.0.3",
         "less": "^4.1.2",
