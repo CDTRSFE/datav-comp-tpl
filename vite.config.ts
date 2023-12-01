@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import externalGlobals from 'rollup-plugin-external-globals';
 import Components from 'unplugin-vue-components/vite';
@@ -11,8 +10,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 import AutoImportRollup from 'unplugin-auto-import/rollup';
 import Unocss from 'unocss/vite';
-import { presetAttributify, presetWind } from 'unocss';
-import transformerDirective from '@unocss/transformer-directives';
+import { presetAttributify, presetWind, transformerDirectives } from 'unocss';
 
 const basePath = 'smart-design-lib';
 const globals = externalGlobals({
@@ -38,7 +36,6 @@ export default defineConfig({
     },
     plugins: [
         vue(),
-        vueJsx(),
         createHtmlPlugin({
             minify: true,
             entry: './src/main.ts',
@@ -51,15 +48,6 @@ export default defineConfig({
         }),
         injectCss(),
         AutoImport({
-            include: [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/],
-            imports: [
-                'vue',
-            ],
-            dts: './types/auto-imports.d.ts',
-            eslintrc: {
-                enabled: true,
-                filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
-            },
             resolvers: [ElementPlusResolver()],
         }),
         Components({
@@ -81,7 +69,7 @@ export default defineConfig({
                 presetWind(),
             ],
             transformers: [
-                transformerDirective(),
+                transformerDirectives(),
             ],
             rules: [
                 [/^scrollbar-([^-]+)(-(.+))?$/, ([, d,, value], { rawSelector }) => {

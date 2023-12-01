@@ -1,9 +1,11 @@
 <template>
     <div class="text-red">
-        <Abc></Abc>
+        {{ count }}
     </div>
 </template>
-<script lang="tsx" setup>
+<script lang="ts" setup>
+import { ref } from 'vue';
+
 defineProps({
     containerWidth: {
         type: Number,
@@ -16,9 +18,6 @@ defineProps({
 });
 
 const count = ref(123);
-const Abc = () => {
-    return <div>{ count.value }</div>;
-};
 </script>
 <style lang="less" scoped>
 </style>
